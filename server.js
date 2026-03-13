@@ -34,6 +34,8 @@ const {
 const app = express();
 app.use(cors());
 app.use(express.json());
+// Serve static assets (images, css, client-side files) from the `data` folder
+app.use('/data', express.static(path.join(__dirname, 'data')));
 
 // ── AWS clients ──────────────────────────────────────────────────────────────
 const awsCreds = {
