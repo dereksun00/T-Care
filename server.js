@@ -5,7 +5,7 @@
  *
  *   POST /api/resolve-location
  *     Body: { query: "I need to see a counsellor" }
- *     Returns: { address: "700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6", label: "Health & Wellness Centre", serviceKey: "health-counselling" }
+ *     Returns: { address: "700 Bay Street, Toronto, ON M5G 1Z6", label: "Health & Wellness Centre", serviceKey: "health-counselling" }
  *
  *   GET /api/maps-key
  *     Returns: { key: "<GOOGLE_MAPS_API_KEY>" }  (keeps the key out of the HTML source)
@@ -50,12 +50,12 @@ const kendra  = new KendraClient(awsCreds);
 const CAMPUS_LOCATIONS = {
   'health-counselling': {
     label:   'Health & Wellness Centre',
-    address: '700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6',
+    address: '700 Bay Street, Toronto, ON M5G 1Z6',
     keywords: ['health', 'wellness', 'walk-in', 'counselling', 'sick', 'doctor', 'nurse'],
   },
   'counselling': {
     label:   'Counselling',
-    address: '700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6',
+    address: '700 Bay Street, Toronto, ON M5G 1Z6',
     keywords: ['therapy', 'therapist', 'mental health', 'counsellor', 'overwhelmed', 'anxious', 'depressed', 'stress'],
   },
   'tcard': {
