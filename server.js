@@ -53,10 +53,10 @@ const CAMPUS_LOCATIONS = {
     address: '214 College St, Toronto, ON M5T 2Z9',
     keywords: ['health', 'wellness', 'walk-in', 'counselling', 'sick', 'doctor', 'nurse'],
   },
-  'caps': {
-    label:   'CAPS Counselling',
+  'counselling': {
+    label:   'Counselling',
     address: '214 College St Room 100, Toronto, ON M5T 2Z9',
-    keywords: ['caps', 'therapy', 'therapist', 'mental health', 'counsellor', 'overwhelmed', 'anxious', 'depressed', 'stress'],
+    keywords: ['therapy', 'therapist', 'mental health', 'counsellor', 'overwhelmed', 'anxious', 'depressed', 'stress'],
   },
   'tcard': {
     label:   'TCard Office',
