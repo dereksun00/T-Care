@@ -409,171 +409,20 @@
   </div>
 </section>
 
-<!-- MENTAL HEALTH BANNER -->
-<div class="mh-banner">
-  <div class="mh-banner-inner">
-    <div class="mh-banner-left">
-      <span class="mh-banner-title">You don't have to figure it out alone</span>
-      <span class="mh-banner-sub">Free, confidential support is always available for UofT students.</span>
-    </div>
-    <div class="mh-banner-right">
-      <div class="mh-banner-faces">
-        <a class="mh-face f-happy" onclick="openPrescreen('happy')" title="I want to explore services"><span>😊</span></a>
-        <a class="mh-face f-mid"   onclick="openPrescreen('mid')"   title="I want grounding strategies"><span>😐</span></a>
-        <a class="mh-face f-sad"   onclick="openPrescreen('sad')"   title="I need to talk to someone"><span>😔</span></a>
-      </div>
-      <button class="mh-help-btn" onclick="openPrescreen('sad')">🆘 I Need Help Now</button>
-      <div class="mh-crisis-inline">
-        <span>⚠️ Immediate crisis?</span>
-        <a href="tel:988">988</a>
-        <a href="tel:911">911</a>
-        <a href="tel:4168632323">Campus Security</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="container">
-    <div class="label">How it works</div>
-    <div class="section-title">From numerous sites to<br>all resouces in one page</div>
-    <p class="section-desc">A RAG navigation engine maps your need to a specific building, then routes you there with campus shortcuts.</p>
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="how-num">01</div>
-        <div class="how-icon" style="background:var(--accent-muted)">🗣️</div>
-        <h3>Describe your need</h3>
-        <p>Type anything in plain language: "I'm a trans student who needs to update my name." No specific keywords needed.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-num">02</div>
-        <div class="how-icon" style="background:var(--purple-muted)">🔍</div>
-        <h3>Intent is understood</h3>
-        <p>We search UofT's PDFs and websites to match your worry to the right office, room, and hours.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-num">03</div>
-        <div class="how-icon" style="background:var(--teal-muted)">🗺️</div>
-        <h3>Fastest route found</h3>
-        <p>Google Maps draws your path using a UofT shortcut graph, accessible routes included.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-num">04</div>
-        <div class="how-icon" style="background:var(--warm-muted)">✨</div>
-        <h3>Plain language summary</h3>
-        <p>Amazon Bedrock compacts websites and PDFs into one sentence: "Bring your passport to the 2nd floor."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" style="background:var(--surface)">
-  <div class="container">
-    <div class="services-top">
-      <div>
-        <div class="label">Campus Services</div>
-        <div class="section-title">Every resource,<br>routed to you</div>
-      </div>
-      <p class="section-desc" style="margin:0">Browse by category or describe your situation in the search bar above.</p>
-    </div>
-    <div class="services-grid">
-      <a class="svc s-health" onclick="showResult('health-counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Health & Wellness Centre</h4><p>Counselling, crisis support, wellness appointments</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
-      <a class="svc s-health" onclick="showResult('counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Mental Health Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
-      <a class="svc s-admin" onclick="showResult('tcard')"><span class="svc-tag t-admin">Admin</span><h4>TCard Office</h4><p>Lost or damaged TCard replacement — bring photo ID</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
-      <a class="svc s-admin" onclick="showResult('registrar')"><span class="svc-tag t-admin">Admin</span><h4>Registrar's Office</h4><p>Transcripts, enrolment verification, name changes</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
-      <a class="svc s-access" onclick="showResult('aoda')"><span class="svc-tag t-access">Accessibility</span><h4>Accessibility Services</h4><p>Accommodations, AODA resources, accessible routing</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
-      <a class="svc s-access" onclick="showResult('ramp')"><span class="svc-tag t-access">Accessibility</span><h4>Accessible Routes & Ramps</h4><p>Find the nearest ramp or elevator to your destination</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
-      <a class="svc s-support" onclick="showResult('equity')"><span class="svc-tag t-support">Support</span><h4>Equity, Diversity & Inclusion</h4><p>Name/pronoun policy, trans resources, EDI advising</p><span class="svc-arrow" style="color:var(--teal)">Get route →</span></a>
-      <a class="svc s-support" onclick="showResult('financial')"><span class="svc-tag t-support">Support</span><h4>Financial Aid & Awards</h4><p>Emergency bursaries, OSAP advising, awards navigation</p><span class="svc-arrow" style="color:var(--teal)">Get route →</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- CAMPUS MAP -->
-<section id="campus-map" style="background:var(--bg)">
-  <div class="container">
-    <div class="services-top" style="margin-bottom:2rem">
-      <div>
-        <div class="label">Interactive Campus Map</div>
-        <div class="section-title">Plan your route,<br>through buildings too</div>
-      </div>
-      <p class="section-desc" style="margin:0">Type any location in plain language — a building name, service, or landmark — and get a walking route across campus. You can also click buildings directly on the map.</p>
-    </div>
-
-    <!-- Natural language route inputs -->
-    <div style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.25rem">
-      <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:0.65rem;align-items:end">
-        <div>
-          <label style="display:block;font-size:0.78rem;color:var(--text-dim);margin-bottom:0.35rem">From</label>
-          <div style="position:relative">
-            <input id="mapFromInput" type="text" placeholder="e.g. Robarts Library, my dorm, front campus…"
-              style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"
-              onkeydown="if(event.key==='Enter')resolveRoute()"/>
-          </div>
-        </div>
-        <div>
-          <label style="display:block;font-size:0.78rem;color:var(--text-dim);margin-bottom:0.35rem">To</label>
-          <div style="position:relative">
-            <input id="mapToInput" type="text" placeholder="e.g. Counselling, the registrar, hart house…"
-              style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"
-              onkeydown="if(event.key==='Enter')resolveRoute()"/>
-          </div>
-        </div>
-        <button onclick="resolveRoute()" id="routeGoBtn"
-          style="background:var(--accent);border:none;border-radius:10px;padding:0.65rem 1.25rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:box-shadow 0.2s;white-space:nowrap;">
-          Get route →
-        </button>
-      </div>
-      <div id="mapResolveStatus" style="font-size:0.8rem;color:var(--text-dim);min-height:1.1em"></div>
-      <!-- Quick-pick chips -->
-      <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
-        <span style="font-size:0.75rem;color:var(--text-dim);align-self:center">Quick:</span>
-        <button class="map-ctrl-btn" onclick="setMapInputs('Robarts Library','Health &amp; Wellness Centre')">Robarts → Health Centre</button>
-        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','Counselling')">SS → Counselling</button>
-        <button class="map-ctrl-btn" onclick="setMapInputs('Hart House','Accessibility Services')">Hart House → Accessibility</button>
-        <button class="map-ctrl-btn" onclick="clearMapRoute()" style="margin-left:auto">Clear</button>
-      </div>
-    </div>
-
-    <!-- Google Map container -->
-    <div id="campusMapWrap" style="position:relative;border:1.5px solid var(--border);border-radius:18px;overflow:hidden;background:var(--card);">
-      <div id="googleMap" style="width:100%;height:480px;"></div>
-      <div id="mapLoadingState" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--card);z-index:2;flex-direction:column;gap:0.75rem">
-        <div style="width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div>
-        <span style="color:var(--text-dim);font-size:0.85rem" id="mapLoadingMsg">Loading map…</span>
-      </div>
-    </div>
-
-    <!-- Route info panel -->
-    <div id="mapRoutePanel" style="display:none;margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
-        <strong style="font-size:0.95rem" id="mapRouteTitle">Your Route</strong>
-        <span id="mapRouteMeta" style="font-size:0.8rem;color:var(--text-mid)"></span>
-      </div>
-      <div id="mapRouteSteps" style="display:flex;flex-direction:column;gap:0.35rem;font-size:0.85rem;color:var(--text-mid)"></div>
-    </div>
-    <p style="font-size:0.78rem;color:var(--text-dim);margin-top:0.75rem;text-align:center">
-      Natural language processed by Amazon Bedrock · Routes powered by Google Maps Directions API ·
-      <a href="https://map.utoronto.ca" target="_blank" style="color:var(--accent-bright)">Official UofT Map ↗</a>
-    </p>
-</section>
-
 <!-- AI ACCESSIBILITY CHAT -->
 <section id="accessibility">
   <div class="container">
     <div class="ai-layout">
       <div>
         <div class="label">Accessibility AI</div>
-        <div class="section-title">Ask anything.<br>Get the right resource.</div>
+            <div class="section-title" style="font-size:25px;">
+              Ask anything. Get the right resource.
+            </div>
         <p class="section-desc">Our AI assistant understands your accessibility needs and connects you directly to the right UofT services.</p>
         <div class="ai-features">
           <div class="ai-feat">
             <span class="ai-feat-icon">♿</span>
-            <div><strong>Physical accessibility</strong><span>Ramps, elevators, accessible entrances, routes across campus</span></div>
+            <div><strong>Physical accessibility</strong><span>Ramps, elevators, accessible entrances</span></div>
           </div>
           <div class="ai-feat">
             <span class="ai-feat-icon">📋</span>
@@ -665,6 +514,77 @@
   </div>
 </section>
 
+<!-- CAMPUS MAP -->
+<section id="campus-map" style="background:var(--bg)">
+  <div class="container">
+    <div class="services-top" style="margin-bottom:2rem">
+      <div>
+        <div class="label">Interactive Campus Map</div>
+        <div class="section-title">Plan your route,<br>through buildings too</div>
+      </div>
+      <p class="section-desc" style="margin:0">Type any location in plain language — a building name, service, or landmark — and get a walking route across campus. You can also click buildings directly on the map.</p>
+    </div>
+
+    <!-- Natural language route inputs -->
+    <div style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.25rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:0.65rem;align-items:end">
+        <div>
+          <label style="display:block;font-size:0.78rem;color:var(--text-dim);margin-bottom:0.35rem">From</label>
+          <div style="position:relative">
+            <input id="mapFromInput" type="text" placeholder="e.g. Robarts Library, my dorm, front campus…"
+              style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"
+              onkeydown="if(event.key==='Enter')resolveRoute()"/>
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78rem;color:var(--text-dim);margin-bottom:0.35rem">To</label>
+          <div style="position:relative">
+            <input id="mapToInput" type="text" placeholder="e.g. Counselling, the registrar, hart house…"
+              style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"
+              onkeydown="if(event.key==='Enter')resolveRoute()"/>
+          </div>
+        </div>
+        <button onclick="resolveRoute()" id="routeGoBtn"
+          style="background:var(--accent);border:none;border-radius:10px;padding:0.65rem 1.25rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;cursor:pointer;transition:box-shadow 0.2s;white-space:nowrap;">
+          Get route →
+        </button>
+      </div>
+      <div id="mapResolveStatus" style="font-size:0.8rem;color:var(--text-dim);min-height:1.1em"></div>
+      <!-- Quick-pick chips -->
+      <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+        <span style="font-size:0.75rem;color:var(--text-dim);align-self:center">Quick:</span>
+        <button class="map-ctrl-btn" onclick="setMapInputs('Robarts Library','Health &amp; Wellness Centre')">Robarts → Health Centre</button>
+        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','Counselling')">SS → Counselling</button>
+        <button class="map-ctrl-btn" onclick="setMapInputs('Hart House','Accessibility Services')">Hart House → Accessibility</button>
+        <button class="map-ctrl-btn" onclick="clearMapRoute()" style="margin-left:auto">Clear</button>
+      </div>
+    </div>
+
+    <!-- Google Map container -->
+    <div id="campusMapWrap" style="position:relative;border:1.5px solid var(--border);border-radius:18px;overflow:hidden;background:var(--card);">
+      <div id="googleMap" style="width:100%;height:480px;"></div>
+      <div id="mapLoadingState" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--card);z-index:2;flex-direction:column;gap:0.75rem">
+        <div style="width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite"></div>
+        <span style="color:var(--text-dim);font-size:0.85rem" id="mapLoadingMsg">Loading map…</span>
+      </div>
+    </div>
+
+    <!-- Route info panel -->
+    <div id="mapRoutePanel" style="display:none;margin-top:1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem">
+        <strong style="font-size:0.95rem" id="mapRouteTitle">Your Route</strong>
+        <span id="mapRouteMeta" style="font-size:0.8rem;color:var(--text-mid)"></span>
+      </div>
+      <div id="mapRouteSteps" style="display:flex;flex-direction:column;gap:0.35rem;font-size:0.85rem;color:var(--text-mid)"></div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-dim);margin-top:0.75rem;text-align:center">
+      Natural language processed by Amazon Bedrock · Routes powered by Google Maps Directions API ·
+      <a href="https://map.utoronto.ca" target="_blank" style="color:var(--accent-bright)">Official UofT Map ↗</a>
+    </p>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
@@ -685,6 +605,63 @@
         <div class="stat-box"><div class="num">12</div><p>Hidden shortcuts mapped</p></div>
         <div class="stat-box"><div class="num">&lt;3s</div><p>From question to route</p></div>
         <div class="stat-box"><div class="num">24/7</div><p>Crisis helpline routing</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SERVICES -->
+<section id="services" style="background:var(--surface)">
+  <div class="container">
+    <div class="services-top">
+      <div>
+        <div class="label">Campus Services</div>
+        <div class="section-title">Every resource,<br>routed to you</div>
+      </div>
+      <p class="section-desc" style="margin:0">Browse by category or describe your situation in the search bar above.</p>
+    </div>
+    <div class="services-grid">
+      <a class="svc s-health" onclick="showResult('health-counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Health & Wellness Centre</h4><p>Counselling, crisis support, wellness appointments</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
+      <a class="svc s-health" onclick="showResult('counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Mental Health Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
+      <a class="svc s-admin" onclick="showResult('tcard')"><span class="svc-tag t-admin">Admin</span><h4>TCard Office</h4><p>Lost or damaged TCard replacement — bring photo ID</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
+      <a class="svc s-admin" onclick="showResult('registrar')"><span class="svc-tag t-admin">Admin</span><h4>Registrar's Office</h4><p>Transcripts, enrolment verification, name changes</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
+      <a class="svc s-access" onclick="showResult('aoda')"><span class="svc-tag t-access">Accessibility</span><h4>Accessibility Services</h4><p>Accommodations, AODA resources, accessible routing</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
+      <a class="svc s-access" onclick="showResult('ramp')"><span class="svc-tag t-access">Accessibility</span><h4>Accessible Routes & Ramps</h4><p>Find the nearest ramp or elevator to your destination</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
+      <a class="svc s-support" onclick="showResult('equity')"><span class="svc-tag t-support">Support</span><h4>Equity, Diversity & Inclusion</h4><p>Name/pronoun policy, trans resources, EDI advising</p><span class="svc-arrow" style="color:var(--teal)">Get route →</span></a>
+      <a class="svc s-support" onclick="showResult('financial')"><span class="svc-tag t-support">Support</span><h4>Financial Aid & Awards</h4><p>Emergency bursaries, OSAP advising, awards navigation</p><span class="svc-arrow" style="color:var(--teal)">Get route →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="label">How it works</div>
+    <div class="section-title">From numerous sites to<br>all resouces in one page</div>
+    <p class="section-desc">A RAG navigation engine maps your need to a specific building, then routes you there with campus shortcuts.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <div class="how-icon" style="background:var(--accent-muted)">🗣️</div>
+        <h3>Describe your need</h3>
+        <p>Type anything in plain language: "I'm a trans student who needs to update my name." No specific keywords needed.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <div class="how-icon" style="background:var(--purple-muted)">🔍</div>
+        <h3>Intent is understood</h3>
+        <p>We search UofT's PDFs and websites to match your worry to the right office, room, and hours.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <div class="how-icon" style="background:var(--teal-muted)">🗺️</div>
+        <h3>Fastest route found</h3>
+        <p>Google Maps draws your path using a UofT shortcut graph, accessible routes included.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">04</div>
+        <div class="how-icon" style="background:var(--warm-muted)">✨</div>
+        <h3>Plain language summary</h3>
+        <p>Amazon Bedrock compacts websites and PDFs into one sentence: "Bring your passport to the 2nd floor."</p>
       </div>
     </div>
   </div>
