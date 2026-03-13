@@ -34,6 +34,8 @@ const {
 const app = express();
 app.use(cors());
 app.use(express.json());
+// Serve static assets (images, css, client-side files) from the `data` folder
+app.use('/data', express.static(path.join(__dirname, 'data')));
 
 // Helper to clean env vars (removes all quotes and whitespace)
 const cleanEnv = (val) => val ? val.replace(/['"\s]/g, '') : undefined;
