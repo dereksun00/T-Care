@@ -389,8 +389,8 @@
   <div class="grid-lines"></div>
   <div class="hero-inner">
     <div class="pill"><span class="pill-dot"></span>UofT Campus Navigator</div>
-    <h1>You know what you need.<br>We'll find <em>where to go.</em></h1>
-    <p class="hero-sub">Describe your situation in plain language. T-Care maps it to the right campus resource — powered by Amazon Bedrock and Google Maps.</p>
+    <h1>The fastest path to <em>campus support.</em></h1>
+    <p class="hero-sub">Describe your situation in plain language. T-Care provides the right campus resource. Powered by Amazon Bedrock and Google Maps.</p>
     <div class="search-wrap">
       <svg class="search-icon-el" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input class="search-input" id="heroSearch" type="text" placeholder="e.g. I lost my TCard and it's 5pm…" />
@@ -433,32 +433,32 @@
 <section id="how">
   <div class="container">
     <div class="label">How it works</div>
-    <div class="section-title">From vague worry to<br>exact GPS coordinate</div>
-    <p class="section-desc">A RAG navigation engine maps your intent to a specific room number, then routes you there with UofT-only shortcuts.</p>
+    <div class="section-title">From numerous sites to<br>all resouces in one page</div>
+    <p class="section-desc">A RAG navigation engine maps your need to a specific building, then routes you there with campus shortcuts.</p>
     <div class="how-grid">
       <div class="how-card">
         <div class="how-num">01</div>
         <div class="how-icon" style="background:var(--accent-muted)">🗣️</div>
         <h3>Describe your need</h3>
-        <p>Type anything in plain language — "I'm a trans student who needs to update my name before convocation." No keywords needed.</p>
+        <p>Type anything in plain language: "I'm a trans student who needs to update my name." No specific keywords needed.</p>
       </div>
       <div class="how-card">
         <div class="how-num">02</div>
         <div class="how-icon" style="background:var(--purple-muted)">🔍</div>
         <h3>Intent is understood</h3>
-        <p>Amazon Kendra searches UofT's admin PDFs and websites to match your worry to the right office, room, and hours.</p>
+        <p>We search UofT's PDFs and websites to match your worry to the right office, room, and hours.</p>
       </div>
       <div class="how-card">
         <div class="how-num">03</div>
         <div class="how-icon" style="background:var(--teal-muted)">🗺️</div>
         <h3>Fastest route found</h3>
-        <p>Amazon Location Service draws your path using a custom UofT shortcut graph — tunnels, indoor paths, accessible routes included.</p>
+        <p>Google Maps draws your path using a UofT shortcut graph, accessible routes included.</p>
       </div>
       <div class="how-card">
         <div class="how-num">04</div>
         <div class="how-icon" style="background:var(--warm-muted)">✨</div>
-        <h3>Plain-language summary</h3>
-        <p>Claude via Amazon Bedrock distills the 50-page policy PDF into one sentence: "Bring your passport to the 2nd floor."</p>
+        <h3>Plain language summary</h3>
+        <p>Amazon Bedrock compacts websites and PDFs into one sentence: "Bring your passport to the 2nd floor."</p>
       </div>
     </div>
   </div>
@@ -476,7 +476,7 @@
     </div>
     <div class="services-grid">
       <a class="svc s-health" onclick="showResult('health-counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Health & Wellness Centre</h4><p>Counselling, crisis support, wellness appointments</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
-      <a class="svc s-health" onclick="showResult('caps')"><span class="svc-tag t-health">Mental Health</span><h4>CAPS Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
+      <a class="svc s-health" onclick="showResult('caps')"><span class="svc-tag t-health">Mental Health</span><h4>Mental Health Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
       <a class="svc s-admin" onclick="showResult('tcard')"><span class="svc-tag t-admin">Admin</span><h4>TCard Office</h4><p>Lost or damaged TCard replacement — bring photo ID</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
       <a class="svc s-admin" onclick="showResult('registrar')"><span class="svc-tag t-admin">Admin</span><h4>Registrar's Office</h4><p>Transcripts, enrolment verification, name changes</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
       <a class="svc s-access" onclick="showResult('aoda')"><span class="svc-tag t-access">Accessibility</span><h4>Accessibility Services</h4><p>Accommodations, AODA resources, accessible routing</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
@@ -513,7 +513,7 @@
         <div>
           <label style="display:block;font-size:0.78rem;color:var(--text-dim);margin-bottom:0.35rem">To</label>
           <div style="position:relative">
-            <input id="mapToInput" type="text" placeholder="e.g. CAPS counselling, the registrar, hart house…"
+            <input id="mapToInput" type="text" placeholder="e.g. Counselling, the registrar, hart house…"
               style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;outline:none;transition:border-color 0.2s;"
               onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"
               onkeydown="if(event.key==='Enter')resolveRoute()"/>
@@ -529,7 +529,7 @@
       <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
         <span style="font-size:0.75rem;color:var(--text-dim);align-self:center">Quick:</span>
         <button class="map-ctrl-btn" onclick="setMapInputs('Robarts Library','Health &amp; Wellness Centre')">Robarts → Health Centre</button>
-        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','CAPS Counselling')">SS → CAPS</button>
+        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','Counselling')">SS → CAPS</button>
         <button class="map-ctrl-btn" onclick="setMapInputs('Hart House','Accessibility Services')">Hart House → Accessibility</button>
         <button class="map-ctrl-btn" onclick="clearMapRoute()" style="margin-left:auto">Clear</button>
       </div>
@@ -565,7 +565,7 @@
       <div>
         <div class="label">Accessibility AI</div>
         <div class="section-title">Ask anything.<br>Get the right resource.</div>
-        <p class="section-desc">Our AI assistant understands your accessibility needs and connects you directly to the right UofT services — no bureaucratic jargon required.</p>
+        <p class="section-desc">Our AI assistant understands your accessibility needs and connects you directly to the right UofT services.</p>
         <div class="ai-features">
           <div class="ai-feat">
             <span class="ai-feat-icon">♿</span>
@@ -596,7 +596,7 @@
             <div class="chat-avatar">🤖</div>
             <div class="chat-header-info">
               <strong>T-Care Accessibility Assistant</strong>
-              <span><span class="online-dot"></span> Online · Powered by Claude</span>
+              <span><span class="online-dot"></span> Online </span>
             </div>
           </div>
           <div class="chat-messages" id="chatMessages">
@@ -668,12 +668,11 @@
       <div>
         <div class="label">About T-Care</div>
         <div class="section-title">Built for UofT students,<br>by UofT students</div>
-        <p class="section-desc" style="margin-bottom:0.75rem">T-Care was born from one observation: students know <em>what</em> they need but never <em>where</em> to go. We fix that with intent-based routing powered by AWS.</p>
+        <p class="section-desc" style="margin-bottom:0.75rem">T-Care was built from one observation: students know <em>what</em> they need but never <em>where</em> to go. We fix that with intent-based routing powered by AWS.</p>
         <p style="color:var(--text-dim);font-size:0.88rem;font-weight:300">HTSL 2026 — Hackathon to Shape Lives · Theme: Improving Access to Campus Support Services.</p>
         <div class="tech-stack">
-          <div class="tech-row"><span class="tech-icon">🔍</span><div class="tech-info"><strong>Amazon Kendra</strong><span>Intent-based document search across UofT's admin PDFs and sites</span></div><span class="tech-badge">RAG</span></div>
-          <div class="tech-row"><span class="tech-icon">🗺️</span><div class="tech-info"><strong>Amazon Location Service</strong><span>Custom campus shortcut graph — tunnels, paths, accessible routes</span></div><span class="tech-badge">Maps</span></div>
-          <div class="tech-row"><span class="tech-icon">✨</span><div class="tech-info"><strong>Amazon Bedrock (Claude)</strong><span>Summarises policy docs into one actionable sentence</span></div><span class="tech-badge">LLM</span></div>
+          <div class="tech-row"><span class="tech-icon">🗺️</span><div class="tech-info"><strong>Google Map</strong><span>Custom campus shortcut graph: tunnels, paths, accessible routes</span></div><span class="tech-badge">Maps</span></div>
+          <div class="tech-row"><span class="tech-icon">✨</span><div class="tech-info"><strong>Amazon Bedrock</strong><span>Summarises policy docs into one actionable sentence</span></div><span class="tech-badge">LLM</span></div>
           <div class="tech-row"><span class="tech-icon">⚡</span><div class="tech-info"><strong>AWS Amplify + Lambda</strong><span>Serverless glue connecting search, routing, and summarisation</span></div><span class="tech-badge">Infra</span></div>
         </div>
       </div>
@@ -694,19 +693,18 @@
       <div>
         <div class="label">Contact</div>
         <div class="section-title">Get in touch<br>or report a gap</div>
-        <p class="section-desc">Missing a service? Found a better shortcut? Let us know — T-Care improves with every report.</p>
+        <p class="section-desc">Missing a service? Found a better shortcut? Let us know! T-Care improves with every report.</p>
         <div class="contact-info">
           <div class="cinfo"><span class="cinfo-icon">📍</span><div><strong>University of Toronto</strong><span>St. George Campus, Toronto, ON</span></div></div>
           <div class="cinfo"><span class="cinfo-icon">📧</span><div><strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f3b2a2e227a0f273b3c237d7f7d79612c2e">[email&#160;protected]</a></strong><span>We respond within 24 hours</span></div></div>
-          <div class="cinfo"><span class="cinfo-icon">💻</span><div><strong>github.com/dereksun00/HTSL-2026</strong><span>Open source — contributions welcome</span></div></div>
         </div>
       </div>
       <form class="contact-form" onsubmit="handleContact(event)">
         <div class="form-row">
-          <div class="field"><label>First name</label><input type="text" placeholder="Alex" /></div>
-          <div class="field"><label>Last name</label><input type="text" placeholder="Chen" /></div>
+          <div class="field"><label>First name</label><input type="text" placeholder="John" /></div>
+          <div class="field"><label>Last name</label><input type="text" placeholder="Doe" /></div>
         </div>
-        <div class="field"><label>Email</label><input type="email" placeholder="alex.chen@mail.utoronto.ca" /></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="john.doe@mail.utoronto.ca" /></div>
         <div class="field"><label>Topic</label>
           <select>
             <option>Report a missing service</option><option>Suggest a campus shortcut</option>
@@ -790,7 +788,7 @@
 // ── ROUTE DATA ──
 const routes = {
   'health-counselling':{ icon:'🏥', title:'Health & Wellness Centre', sub:'214 College St, 2nd Floor · Open until 5:00 PM', r1:'→ Head south through Sid Smith tunnel (campus shortcut ⚡)', r2:'→ Exit at Medical Sciences Building, turn left on College St', dest:'Arrive at Health & Wellness Centre · ~4 min walk', summary:'"Walk-in counselling ends at 4:30 PM. Ask reception for the same-day crisis slot if urgent."' },
-  'caps':{ icon:'🧠', title:'CAPS Counselling', sub:'214 College St, Room 100 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at CAPS · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/caps or call for a same-day crisis appointment. No referral needed."' },
+  'caps':{ icon:'🧠', title:'Counselling', sub:'214 College St, Room 100 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at CAPS · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/caps or call for a same-day crisis appointment. No referral needed."' },
   'tcard':{ icon:'💳', title:'TCard Office', sub:'Robarts Library, 130 St George St · Closes 6:00 PM', r1:'→ Head north on St George St past Hart House', r2:'→ Enter Robarts via the main south entrance, follow signs', dest:'Arrive at TCard Office, ground floor · ~5 min walk', summary:'"Bring any government-issued photo ID. Replacement fee is $20. They close at 6 PM."' },
   'registrar':{ icon:'📋', title:"Registrar's Office", sub:'172 St George St · Open Mon–Fri 9am–5pm', r1:'→ Walk south on St George St past Hart House', r2:'→ Enter through the Simcoe Hall main entrance', dest:"Arrive at Registrar's Office · ~7 min walk", summary:'"For a diploma name change, bring your legal name change document and student ID. Processing takes 4–6 weeks."' },
   'aoda':{ icon:'♿', title:'Accessibility Services', sub:'455 Spadina Ave, Suite 400 · Open Mon–Fri 9am–5pm', r1:'→ Head west on Willcocks St to Spadina Ave', r2:'→ Turn south, enter 455 Spadina Ave, take elevator to Suite 400', dest:'Arrive at Accessibility Services · ~9 min walk', summary:'"Book an intake appointment to receive accommodation letters. Bring documentation from a regulated health professional."' },
@@ -832,7 +830,7 @@ const SYSTEM_PROMPT = `You are T-Care, a compassionate and knowledgeable accessi
 
 You have knowledge of these UofT resources:
 - Health & Wellness Centre: 214 College St, 2nd Floor. Walk-in counselling until 4:30 PM. Call 416-978-8030.
-- CAPS Counselling: 214 College St, Room 100. Appointments and same-day crisis slots. 416-978-8070.
+- Counselling: 214 College St, Room 100. Appointments and same-day crisis slots. 416-978-8070.
 - TCard Office: Robarts Library, 130 St George St. Closes 6 PM. Costs $20 to replace, need photo ID.
 - Registrar's Office: 172 St George St. Mon–Fri 9am–5pm. Handles transcripts, name changes, enrolment.
 - Accessibility Services: 455 Spadina Ave, Suite 400. Mon–Fri 9am–5pm. Accommodations, AODA support.
@@ -1038,7 +1036,7 @@ const BACKEND = 'http://localhost:3001'; // T-Care backend (server.js)
 // Ground-truth addresses used as fallback when Bedrock is unavailable
 const LOCATION_DB = {
   'health-counselling': { label:'Health & Wellness Centre',       address:'214 College St, Toronto, ON M5T 2Z9' },
-  'caps':               { label:'CAPS Counselling',               address:'214 College St, Toronto, ON M5T 2Z9' },
+  'caps':               { label:'Counselling',               address:'214 College St, Toronto, ON M5T 2Z9' },
   'tcard':              { label:'TCard Office (Robarts Library)',  address:'130 St George St, Toronto, ON M5S 1A5' },
   'registrar':          { label:"Registrar's Office",             address:'172 St George St, Toronto, ON M5R 0A3' },
   'aoda':               { label:'Accessibility Services',         address:'455 Spadina Ave, Toronto, ON M5S 2G8' },
