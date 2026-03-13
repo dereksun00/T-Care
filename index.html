@@ -368,7 +368,9 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo"><div class="logo-t">T</div>T-Care</a>
+<a href="#" class="logo">
+  <img src="logo.png" alt="T-Care Logo">
+</a>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#accessibility">Accessibility AI</a>
@@ -476,7 +478,7 @@
     </div>
     <div class="services-grid">
       <a class="svc s-health" onclick="showResult('health-counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Health & Wellness Centre</h4><p>Counselling, crisis support, wellness appointments</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
-      <a class="svc s-health" onclick="showResult('caps')"><span class="svc-tag t-health">Mental Health</span><h4>Mental Health Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
+      <a class="svc s-health" onclick="showResult('counselling')"><span class="svc-tag t-health">Mental Health</span><h4>Mental Health Counselling</h4><p>Individual therapy and group programs for students</p><span class="svc-arrow" style="color:var(--red)">Get route →</span></a>
       <a class="svc s-admin" onclick="showResult('tcard')"><span class="svc-tag t-admin">Admin</span><h4>TCard Office</h4><p>Lost or damaged TCard replacement — bring photo ID</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
       <a class="svc s-admin" onclick="showResult('registrar')"><span class="svc-tag t-admin">Admin</span><h4>Registrar's Office</h4><p>Transcripts, enrolment verification, name changes</p><span class="svc-arrow" style="color:var(--accent-bright)">Get route →</span></a>
       <a class="svc s-access" onclick="showResult('aoda')"><span class="svc-tag t-access">Accessibility</span><h4>Accessibility Services</h4><p>Accommodations, AODA resources, accessible routing</p><span class="svc-arrow" style="color:var(--warm)">Get route →</span></a>
@@ -529,7 +531,7 @@
       <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
         <span style="font-size:0.75rem;color:var(--text-dim);align-self:center">Quick:</span>
         <button class="map-ctrl-btn" onclick="setMapInputs('Robarts Library','Health &amp; Wellness Centre')">Robarts → Health Centre</button>
-        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','Counselling')">SS → CAPS</button>
+        <button class="map-ctrl-btn" onclick="setMapInputs('Sidney Smith Hall','Counselling')">SS → Counselling</button>
         <button class="map-ctrl-btn" onclick="setMapInputs('Hart House','Accessibility Services')">Hart House → Accessibility</button>
         <button class="map-ctrl-btn" onclick="clearMapRoute()" style="margin-left:auto">Clear</button>
       </div>
@@ -788,7 +790,7 @@
 // ── ROUTE DATA ──
 const routes = {
   'health-counselling':{ icon:'🏥', title:'Health & Wellness Centre', sub:'700 Bay Street, Toronto, ON M5G 1Z6 · Open until 5:00 PM', r1:'→ Head south through Sid Smith tunnel (campus shortcut ⚡)', r2:'→ Exit at Medical Sciences Building, turn left on College St', dest:'Arrive at Health & Wellness Centre · ~4 min walk', summary:'"Walk-in counselling ends at 4:30 PM. Ask reception for the same-day crisis slot if urgent."' },
-  'caps':{ icon:'🧠', title:'Counselling', sub:'700 Bay Street, Toronto, ON M5G 1Z6 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at CAPS · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/caps or call for a same-day crisis appointment. No referral needed."' },
+  'counselling':{ icon:'🧠', title:'Counselling', sub:'700 Bay Street, Toronto, ON M5G 1Z6 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at counselling · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/counselling or call for a same-day crisis appointment. No referral needed."' },
   'tcard':{ icon:'💳', title:'TCard Office', sub:'800 Bay Street · Closes 6:00 PM', r1:'→ Head north on St George St past Hart House', r2:'→ Enter Robarts via the main south entrance, follow signs', dest:'Arrive at TCard Office, ground floor · ~5 min walk', summary:'"Bring any government-issued photo ID. Replacement fee is $20. They close at 6 PM."' },
   'registrar':{ icon:'📋', title:"Registrar's Office", sub:'172 St George St · Open Mon–Fri 9am–5pm', r1:'→ Walk south on St George St past Hart House', r2:'→ Enter through the Simcoe Hall main entrance', dest:"Arrive at Registrar's Office · ~7 min walk", summary:'"For a diploma name change, bring your legal name change document and student ID. Processing takes 4–6 weeks."' },
   'aoda':{ icon:'♿', title:'Accessibility Services', sub:'455 Spadina Ave, Suite 400 · Open Mon–Fri 9am–5pm', r1:'→ Head west on Willcocks St to Spadina Ave', r2:'→ Turn south, enter 455 Spadina Ave, take elevator to Suite 400', dest:'Arrive at Accessibility Services · ~9 min walk', summary:'"Book an intake appointment to receive accommodation letters. Bring documentation from a regulated health professional."' },
@@ -805,7 +807,7 @@ function handleSearch(){
   else if(/name|diploma|trans|pronoun/.test(q)) showResult('equity');
   else if(/ramp|accessible|wheelchair|elevator/.test(q)) showResult('ramp');
   else if(/money|financial|bursary|osap/.test(q)) showResult('financial');
-  else if(/counsell|therapy|caps/.test(q)) showResult('caps');
+  else if(/counsell|therapy|counselling/.test(q)) showResult('counselling');
   else if(/registrar|transcript/.test(q)) showResult('registrar');
   else showResult('health-counselling');
 }
@@ -847,7 +849,7 @@ Guidelines:
 - Give specific, actionable information: office names, addresses, hours, phone numbers.
 - When relevant, mention the fastest campus route or shortcut.
 - Keep responses concise but thorough. Use line breaks for readability.
-- At the end of each response, if you've identified a relevant service, add a line like: RESOURCE:[service_key] where service_key is one of: health-counselling, caps, tcard, registrar, aoda, ramp, equity, financial
+- At the end of each response, if you've identified a relevant service, add a line like: RESOURCE:[service_key] where service_key is one of: health-counselling, counselling, tcard, registrar, aoda, ramp, equity, financial
 - Only add one RESOURCE: tag if it's clearly the most relevant. Don't add it for general conversation.`;
 
 let chatHistory = [];
@@ -1008,9 +1010,9 @@ function psStep3(type){
   } else if(psMood==='happy'){
     el.innerHTML=`<div class="outcome-box"><h4>🗺️ Explore campus services</h4><p>Browse all UofT support resources and get a route to any of them.</p></div><button class="btn-modal" onclick="closePS();document.getElementById('services').scrollIntoView({behavior:'smooth'})">Browse all services →</button>`;
   } else if(psMood==='mid'){
-    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>🌿 5-4-3-2-1 Grounding</h4><p>Name 5 things you see · 4 you can touch · 3 you hear · 2 you smell · 1 you taste. Take your time.</p></div><div class="outcome-box"><h4>💬 Talk to someone at CAPS</h4><p>Drop-in hours Mon–Fri 10am–12pm and 1pm–3pm at 700 Bay Street, Toronto, ON M5G 1Z6. No appointment needed.</p></div><textarea class="mtextarea" placeholder="Optional: describe what's on your mind…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Find nearest counselling →</button>`;
+    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>🌿 5-4-3-2-1 Grounding</h4><p>Name 5 things you see · 4 you can touch · 3 you hear · 2 you smell · 1 you taste. Take your time.</p></div><div class="outcome-box"><h4>💬 Talk to someone at counselling</h4><p>Drop-in hours Mon–Fri 10am–12pm and 1pm–3pm at 700 Bay Street, Toronto, ON M5G 1Z6. No appointment needed.</p></div><textarea class="mtextarea" placeholder="Optional: describe what's on your mind…"></textarea><button class="btn-modal" onclick="closePS();showResult('counselling')">Find nearest counselling →</button>`;
   } else {
-    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>💬 Talk to someone right now</h4><p>Good2Talk: 1-866-925-5454 — free, confidential, 24/7 for post-secondary students in Ontario.</p></div><div class="outcome-box"><h4>🗓️ Schedule an appointment</h4><p>CAPS offers same-day crisis slots. Walk in to 700 Bay Street, Toronto, ON M5G 1Z6 or call 416-978-8070.</p></div><textarea class="mtextarea" placeholder="Optional: briefly describe what you're going through…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Route me to counselling →</button>`;
+    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>💬 Talk to someone right now</h4><p>Good2Talk: 1-866-925-5454 — free, confidential, 24/7 for post-secondary students in Ontario.</p></div><div class="outcome-box"><h4>🗓️ Schedule an appointment</h4><p>counselling offers same-day crisis slots. Walk in to 700 Bay Street, Toronto, ON M5G 1Z6 or call 416-978-8070.</p></div><textarea class="mtextarea" placeholder="Optional: briefly describe what you're going through…"></textarea><button class="btn-modal" onclick="closePS();showResult('counselling')">Route me to counselling →</button>`;
   }
 }
 
@@ -1037,7 +1039,7 @@ const BACKEND = 'http://localhost:3001'; // T-Care backend (server.js)
 // Synchronized with server-side `CAMPUS_LOCATIONS` to avoid routing mismatches
 const LOCATION_DB = {
   'health-counselling': { label: 'Health & Wellness Centre', address: '214 College St, Toronto, ON M5T 2Z9' },
-  'caps':               { label: 'CAPS Counselling',         address: '214 College St Room 100, Toronto, ON M5T 2Z9' },
+  'counselling':               { label: 'Counselling',         address: '214 College St Room 100, Toronto, ON M5T 2Z9' },
   'tcard':              { label: 'TCard Office (Robarts Library)', address: '130 St George St, Toronto, ON M5S 1A5' },
   'registrar':          { label: "Registrar's Office",     address: '172 St George St, Toronto, ON M5R 0A3' },
   'aoda':               { label: 'Accessibility Services',    address: '455 Spadina Ave Suite 400, Toronto, ON M5S 2G8' },
@@ -1198,8 +1200,8 @@ async function resolveLocation(query) {
         return { key, label: loc.label, address: loc.address, isPhysicalLocation: true, fallback: true };
       }
     }
-    if (/overwhelm|counsel|mental|therapy|caps/.test(q))
-      return { ...LOCATION_DB.caps,  key:'caps',  isPhysicalLocation:true, fallback:true };
+    if (/overwhelm|counsel|mental|therapy|counselling/.test(q))
+      return { ...LOCATION_DB.counselling,  key:'counselling',  isPhysicalLocation:true, fallback:true };
     if (/tcard|id card|lost card/.test(q))
       return { ...LOCATION_DB.tcard, key:'tcard', isPhysicalLocation:true, fallback:true };
     if (/registrar|transcript|name change/.test(q))
@@ -1361,7 +1363,7 @@ function setMapInputs(from, to) {
 // ── Wire service card "Get route" clicks to the map ──────────────────────────
 (function patchServiceCards() {
   const mapping = {
-    'health-counselling':'health-counselling','caps':'caps','tcard':'tcard',
+    'health-counselling':'health-counselling','counselling':'counselling','tcard':'tcard',
     'registrar':'registrar','aoda':'aoda','ramp':'aoda',
     'equity':'equity','financial':'financial'
   };
