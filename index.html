@@ -787,8 +787,8 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── ROUTE DATA ──
 const routes = {
-  'health-counselling':{ icon:'🏥', title:'Health & Wellness Centre', sub:'214 College St, 2nd Floor · Open until 5:00 PM', r1:'→ Head south through Sid Smith tunnel (campus shortcut ⚡)', r2:'→ Exit at Medical Sciences Building, turn left on College St', dest:'Arrive at Health & Wellness Centre · ~4 min walk', summary:'"Walk-in counselling ends at 4:30 PM. Ask reception for the same-day crisis slot if urgent."' },
-  'caps':{ icon:'🧠', title:'Counselling', sub:'214 College St, Room 100 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at CAPS · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/caps or call for a same-day crisis appointment. No referral needed."' },
+  'health-counselling':{ icon:'🏥', title:'Health & Wellness Centre', sub:'700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6 · Open until 5:00 PM', r1:'→ Head south through Sid Smith tunnel (campus shortcut ⚡)', r2:'→ Exit at Medical Sciences Building, turn left on College St', dest:'Arrive at Health & Wellness Centre · ~4 min walk', summary:'"Walk-in counselling ends at 4:30 PM. Ask reception for the same-day crisis slot if urgent."' },
+  'caps':{ icon:'🧠', title:'Counselling', sub:'700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6 · By appointment', r1:'→ Take the underground path from Robarts Library', r2:'→ Follow signs to College St entrance, Room 100 on left', dest:'Arrive at CAPS · ~6 min walk', summary:'"Book at studentlife.utoronto.ca/caps or call for a same-day crisis appointment. No referral needed."' },
   'tcard':{ icon:'💳', title:'TCard Office', sub:'Robarts Library, 130 St George St · Closes 6:00 PM', r1:'→ Head north on St George St past Hart House', r2:'→ Enter Robarts via the main south entrance, follow signs', dest:'Arrive at TCard Office, ground floor · ~5 min walk', summary:'"Bring any government-issued photo ID. Replacement fee is $20. They close at 6 PM."' },
   'registrar':{ icon:'📋', title:"Registrar's Office", sub:'172 St George St · Open Mon–Fri 9am–5pm', r1:'→ Walk south on St George St past Hart House', r2:'→ Enter through the Simcoe Hall main entrance', dest:"Arrive at Registrar's Office · ~7 min walk", summary:'"For a diploma name change, bring your legal name change document and student ID. Processing takes 4–6 weeks."' },
   'aoda':{ icon:'♿', title:'Accessibility Services', sub:'455 Spadina Ave, Suite 400 · Open Mon–Fri 9am–5pm', r1:'→ Head west on Willcocks St to Spadina Ave', r2:'→ Turn south, enter 455 Spadina Ave, take elevator to Suite 400', dest:'Arrive at Accessibility Services · ~9 min walk', summary:'"Book an intake appointment to receive accommodation letters. Bring documentation from a regulated health professional."' },
@@ -829,8 +829,8 @@ function closeROutside(e){ if(e.target===document.getElementById('resultOverlay'
 const SYSTEM_PROMPT = `You are T-Care, a compassionate and knowledgeable accessibility and campus navigation assistant for the University of Toronto (St. George campus). Your role is to help students find the right campus resources, services, and support.
 
 You have knowledge of these UofT resources:
-- Health & Wellness Centre: 214 College St, 2nd Floor. Walk-in counselling until 4:30 PM. Call 416-978-8030.
-- Counselling: 214 College St, Room 100. Appointments and same-day crisis slots. 416-978-8070.
+- Health & Wellness Centre: 700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6. Walk-in counselling Open until 5:00 PM. Call 416-978-8030.
+- Counselling: 700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6. Appointments and same-day crisis slots. (416) 978-8030.
 - TCard Office: Robarts Library, 130 St George St. Closes 6 PM. Costs $20 to replace, need photo ID.
 - Registrar's Office: 172 St George St. Mon–Fri 9am–5pm. Handles transcripts, name changes, enrolment.
 - Accessibility Services: 455 Spadina Ave, Suite 400. Mon–Fri 9am–5pm. Accommodations, AODA support.
@@ -910,7 +910,7 @@ async function sendMessage(){
 
   } catch(err) {
     removeTyping(typingId);
-    appendMsg('ai', "Sorry, I'm having trouble connecting right now. For urgent help, call 988 or visit the Health & Wellness Centre at 214 College St.");
+    appendMsg('ai', "Sorry, I'm having trouble connecting right now. For urgent help, call 988 or visit the Health & Wellness Centre at 700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6.");
   }
 
   chatBusy = false;
@@ -1008,9 +1008,9 @@ function psStep3(type){
   } else if(psMood==='happy'){
     el.innerHTML=`<div class="outcome-box"><h4>🗺️ Explore campus services</h4><p>Browse all UofT support resources and get a route to any of them.</p></div><button class="btn-modal" onclick="closePS();document.getElementById('services').scrollIntoView({behavior:'smooth'})">Browse all services →</button>`;
   } else if(psMood==='mid'){
-    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>🌿 5-4-3-2-1 Grounding</h4><p>Name 5 things you see · 4 you can touch · 3 you hear · 2 you smell · 1 you taste. Take your time.</p></div><div class="outcome-box"><h4>💬 Talk to someone at CAPS</h4><p>Drop-in hours Mon–Fri 10am–12pm and 1pm–3pm at 214 College St. No appointment needed.</p></div><textarea class="mtextarea" placeholder="Optional: describe what's on your mind…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Find nearest counselling →</button>`;
+    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>🌿 5-4-3-2-1 Grounding</h4><p>Name 5 things you see · 4 you can touch · 3 you hear · 2 you smell · 1 you taste. Take your time.</p></div><div class="outcome-box"><h4>💬 Talk to someone at CAPS</h4><p>Drop-in hours Mon–Fri 10am–12pm and 1pm–3pm at 700 Bay Street 12th and 14th floors, 700 Bay St. No appointment needed.</p></div><textarea class="mtextarea" placeholder="Optional: describe what's on your mind…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Find nearest counselling →</button>`;
   } else {
-    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>💬 Talk to someone right now</h4><p>Good2Talk: 1-866-925-5454 — free, confidential, 24/7 for post-secondary students in Ontario.</p></div><div class="outcome-box"><h4>🗓️ Schedule an appointment</h4><p>CAPS offers same-day crisis slots. Walk in to 214 College St or call 416-978-8070.</p></div><textarea class="mtextarea" placeholder="Optional: briefly describe what you're going through…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Route me to counselling →</button>`;
+    el.innerHTML=`<div class="outcome-box" style="margin-bottom:0.75rem"><h4>💬 Talk to someone right now</h4><p>Good2Talk: 1-866-925-5454 — free, confidential, 24/7 for post-secondary students in Ontario.</p></div><div class="outcome-box"><h4>🗓️ Schedule an appointment</h4><p>CAPS offers same-day crisis slots. Walk in to 700 Bay Street 12th and 14th floors, 700 Bay St. or call (416) 978-8030.</p></div><textarea class="mtextarea" placeholder="Optional: briefly describe what you're going through…"></textarea><button class="btn-modal" onclick="closePS();showResult('caps')">Route me to counselling →</button>`;
   }
 }
 
@@ -1035,8 +1035,8 @@ const BACKEND = 'http://localhost:3001'; // T-Care backend (server.js)
 
 // Ground-truth addresses used as fallback when Bedrock is unavailable
 const LOCATION_DB = {
-  'health-counselling': { label:'Health & Wellness Centre',       address:'214 College St, Toronto, ON M5T 2Z9' },
-  'caps':               { label:'Counselling',               address:'214 College St, Toronto, ON M5T 2Z9' },
+  'health-counselling': { label:'Health & Wellness Centre',       address:'700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6' },
+  'caps':               { label:'Counselling',               address:'2700 Bay Street 12th and 14th floors, 700 Bay St. 12th Fl, Toronto, ON M5G 1Z6 },
   'tcard':              { label:'TCard Office (Robarts Library)',  address:'130 St George St, Toronto, ON M5S 1A5' },
   'registrar':          { label:"Registrar's Office",             address:'172 St George St, Toronto, ON M5R 0A3' },
   'aoda':               { label:'Accessibility Services',         address:'455 Spadina Ave, Toronto, ON M5S 2G8' },
